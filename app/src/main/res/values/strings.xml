@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Movie</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="let_s_login_in">Let’s Login in</string>
+    <string name="continue_with_facebook">Continue With Facebook</string>
+    <string name="continue_with_google">Continue With Google</string>
+    <string name="or">OR</string>
+    <string name="sign_in_with_password">Sign in with Password</string>
+    <string name="don_t_have_an_account">Don’t have an account?</string>
+    <string name="sign_up"> Sign up</string>
+</resources>
