@@ -14,7 +14,7 @@
         android:layout_height="150dp"
         android:layout_marginTop="100dp"
         android:adjustViewBounds="true"
-        android:src="@drawable/img"
+        android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -128,6 +128,7 @@
         app:layout_constraintTop_toBottomOf="@id/or">
 
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/sign_with_password"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:padding="15dp">
@@ -162,7 +163,7 @@
             app:layout_constraintTop_toBottomOf="@id/google_login" />
 
         <TextView
-            android:id="@+id/sign_up"
+            android:id="@+id/sign_up_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"

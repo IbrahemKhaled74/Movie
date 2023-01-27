@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#191C2B</color>
     <color name="blue">#0066FF</color>
+    <color name="gmail_password_text">#707070</color>
 </resources>
