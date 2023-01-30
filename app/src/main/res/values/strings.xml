@@ -12,4 +12,11 @@
     <string name="create_your_account">Create Your Account</string>
     <string name="gmail">   Email</string>
     <string name="password">   Password</string>
+    <string name="welcome_to_fliqs">Welcome to Fliqs</string>
+    <string name="welcome_text">The best movie streaming app of the country to make your days greatfull</string>
+    <string name="next">Next</string>
+    <string name="title2">Enjoy Your Movies </string>
+    <string name="subtitle2">The best movie streaming app of the country to make your days greatfull</string>
+
+
 </resources>
