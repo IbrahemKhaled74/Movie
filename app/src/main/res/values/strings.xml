@@ -10,6 +10,6 @@
     <string name="don_t_have_an_account">Don’t have an account?</string>
     <string name="sign_up"> Sign up</string>
     <string name="create_your_account">Create Your Account</string>
-    <string name="gmail">  Email</string>
-    <string name="password">  Password</string>
+    <string name="gmail">   Email</string>
+    <string name="password">   Password</string>
 </resources>
