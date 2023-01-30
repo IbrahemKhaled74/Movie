@@ -44,9 +44,10 @@ class ViewPager : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         bind.viewPager.adapter=viewPagerAdaptor
+
         TabLayoutMediator(bind.introTabLayout,bind.viewPager){tab,pos->
 
-        }
+        }.attach()
 
     }
 
