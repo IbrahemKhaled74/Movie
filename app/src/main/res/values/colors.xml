@@ -10,4 +10,5 @@
     <color name="gray">#191C2B</color>
     <color name="blue">#0066FF</color>
     <color name="gmail_password_text">#707070</color>
+    <color name="transperent">#00000000</color>
 </resources>
