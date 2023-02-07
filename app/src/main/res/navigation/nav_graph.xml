@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/login"
-        android:name="com.example.movie.Login"
+        android:name="com.example.movie.login.Login"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -32,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/emailLogin"
-        android:name="com.example.movie.EmailLogin"
+        android:name="com.example.movie.email_login.EmailLogin"
         android:label="fragment_email_login"
         tools:layout="@layout/fragment_email_login" />
     <fragment

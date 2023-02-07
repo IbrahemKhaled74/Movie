@@ -1,5 +1,6 @@
 package com.example.movie.onboarding
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
+import com.example.movie.Constants
 import com.example.movie.R
 import com.example.movie.databinding.FragmentViewPagerBinding
 import com.example.movie.databinding.ViewPagerItemBinding
@@ -62,6 +64,7 @@ class ViewPager : Fragment() {
                     }
                     2->{
                         findNavController().navigate(R.id.action_viewPager_to_login)
+                        onBoardingFinished()
                     }
 
                 }
@@ -74,6 +77,13 @@ class ViewPager : Fragment() {
 
         }.attach()
 
+
+    }
+    private fun onBoardingFinished(){
+        val sharedPerf=requireActivity().getSharedPreferences(Constants.onBoarding,Context.MODE_PRIVATE)
+        val editor=sharedPerf.edit()
+        editor.putBoolean(Constants.finish,true)
+        editor.apply()
 
     }
 

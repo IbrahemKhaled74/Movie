@@ -18,6 +18,11 @@
     <string name="getStarted">Get Started</string>
     <string name="title2">Enjoy Your Movies </string>
     <string name="subtitle2">The best movie streaming app of the country to make your days greatfull</string>
+    <string name="create_account">Create account</string>
+    <string name="your_email">Your Email</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="your_username">Your Username</string>
 
 
 </resources>
