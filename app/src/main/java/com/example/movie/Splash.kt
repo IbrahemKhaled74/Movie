@@ -19,11 +19,11 @@ class Splash : Fragment() {
         if (onBoardingFinished()) {
             Handler(Looper.getMainLooper()).postDelayed({
                 findNavController().navigate(R.id.action_splash_to_login)
-            }, 3000)
+            }, 1000)
         } else {
             Handler(Looper.getMainLooper()).postDelayed({
                 findNavController().navigate(R.id.action_splash_to_viewPager)
-            }, 3000)
+            }, 1000)
         }
         return inflater.inflate(R.layout.fragment_splash, container, false)
 

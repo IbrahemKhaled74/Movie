@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.movie.R
 import com.example.movie.databinding.FragmentLoginBinding
 import com.facebook.CallbackManager
@@ -44,6 +45,13 @@ class Login : Fragment() {
 
         bind.facebookLogin.setOnClickListener {
             signInWithFaceBook()
+        }
+        bind.emailLogin.setOnClickListener {
+            findNavController().navigate(R.id.action_login_to_emailLogin)
+        }
+        bind.signUp.setOnClickListener {
+            findNavController().navigate(R.id.action_login_to_registration)
+
         }
         return bind.root
     }

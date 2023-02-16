@@ -29,6 +29,9 @@
         <action
             android:id="@+id/action_login_to_emailLogin"
             app:destination="@id/emailLogin" />
+        <action
+            android:id="@+id/action_login_to_registration"
+            app:destination="@id/registration" />
     </fragment>
     <fragment
         android:id="@+id/emailLogin"
@@ -47,4 +50,10 @@
             app:popUpTo="@id/viewPager"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/registration"
+        android:name="com.example.movie.registration.Registration"
+        android:label="Registration"
+        tools:layout="@layout/fragment_regesteration"
+        />
 </navigation>

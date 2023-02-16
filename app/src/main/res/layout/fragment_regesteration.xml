@@ -6,7 +6,7 @@
     <data>
 
         <variable
-            name="data"
+            name="VM"
             type="com.example.movie.registration.RegistrationViewModel" />
 
     </data>
@@ -28,7 +28,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/create_email"
+            android:id="@+id/create"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="start"
@@ -63,10 +63,11 @@
             app:boxCornerRadiusBottomStart="10dp"
             app:boxCornerRadiusTopEnd="10dp"
             app:boxCornerRadiusTopStart="10dp"
-            app:error="@{data.userNameError}"
+            app:error="@{VM.userNameError}"
+            app:errorTextColor="@color/red"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/create_email"
+            app:layout_constraintTop_toBottomOf="@+id/create"
             app:startIconTint="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -74,8 +75,11 @@
                 android:layout_height="match_parent"
                 android:hint="@string/your_username"
                 android:inputType="text"
+                android:textColor="@color/white"
                 android:padding="20dp"
-                android:text="@={data.userName}" />
+                android:text="@={VM.userName}"
+
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -103,7 +107,8 @@
             app:boxCornerRadiusBottomStart="10dp"
             app:boxCornerRadiusTopEnd="10dp"
             app:boxCornerRadiusTopStart="10dp"
-            app:error="@{data.emailError}"
+            app:error="@{VM.emailError}"
+            app:errorTextColor="@color/red"
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -116,7 +121,8 @@
                 android:hint="@string/your_email"
                 android:inputType="text"
                 android:padding="20dp"
-                android:text="@={data.email}"
+                android:text="@={VM.email}"
+                android:textColor="@color/white"
 
 
                 />
@@ -126,7 +132,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="35dp"
             android:padding="10dp"
             android:text="@string/password"
             android:textColor="@color/white"
@@ -147,34 +153,38 @@
             app:boxCornerRadiusBottomStart="10dp"
             app:boxCornerRadiusTopEnd="10dp"
             app:boxCornerRadiusTopStart="10dp"
-            app:endIconMode="password_toggle"
-            app:endIconTint="@color/white"
-            app:error="@{data.passwordError}"
-
+            app:error="@{VM.passwordError}"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/white"
+            app:errorTextColor="@color/red"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/your_email"
-            app:startIconTint="@color/white">
+            app:startIconTint="@color/white"
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/your_password"
-                android:inputType="text"
+                android:inputType="textPassword"
                 android:padding="20dp"
+                android:text="@={VM.password}"
+                android:textColor="@color/white"
 
-                android:text="@={data.password}"
 
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/email_created"
+            android:id="@+id/create_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/blue"
             app:cardCornerRadius="15dp"
+
+            android:onClick="@{()->VM.createAccount()}"
             app:cardElevation="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -193,6 +203,7 @@
                     android:gravity="center"
                     android:text="@string/create_account"
                     android:textColor="@color/white"
+
                     android:textSize="20sp" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
