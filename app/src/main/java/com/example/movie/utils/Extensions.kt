@@ -1,6 +1,6 @@
-package com.example.movie
+package com.example.movie.utils
 
-import android.app.Activity
+
 import android.content.Context
 import android.widget.Toast
 

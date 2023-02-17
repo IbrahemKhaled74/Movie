@@ -28,5 +28,8 @@
     <string name="fb_login_protocol_scheme">fb1234</string>
     <string name="facebook_client_token">56789</string>
     <string name="your_password">Your Password</string>
+    <string name="forget_password">Forget Password ?</string>
+    <string name="enter_your_email">Enter Your Email</string>
+    <string name="reset_password">Reset Password</string>
 
 </resources>

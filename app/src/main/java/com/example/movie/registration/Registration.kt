@@ -6,13 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.movie.Extensions
-import com.example.movie.Extensions.toastMessage
-import com.example.movie.FirebaseUtils
+import com.example.movie.utils.Extensions.toastMessage
 import com.example.movie.R
 import com.example.movie.databinding.FragmentRegesterationBinding
 
@@ -33,11 +30,12 @@ class Registration : Fragment(),Navigator {
     private fun showMessage(){
         registrationViewModel.message.observe(viewLifecycleOwner){
             toastMessage(requireContext(),it)
+            Log.e("TAG", it, )
         }
     }
 
-    override fun goToMainFragment() {
-        findNavController().navigate(R.id.action_registration_to_mainFragment)
+    override fun goToEmailLogin() {
+        findNavController().navigate(R.id.action_registration_to_emailLogin)
     }
 
 }

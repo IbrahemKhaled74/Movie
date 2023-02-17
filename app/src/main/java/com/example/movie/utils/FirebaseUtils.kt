@@ -1,4 +1,4 @@
-package com.example.movie
+package com.example.movie.utils
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser

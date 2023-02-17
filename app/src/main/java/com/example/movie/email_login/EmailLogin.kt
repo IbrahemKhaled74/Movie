@@ -23,6 +23,9 @@ class EmailLogin : Fragment() {
         bind.signUp.setOnClickListener {
             findNavController().navigate(R.id.action_emailLogin_to_mainFragment)
         }
+        bind.forgetPass.setOnClickListener {
+            findNavController().navigate(R.id.action_emailLogin_to_resetPassword)
+        }
         return bind.root
     }
 

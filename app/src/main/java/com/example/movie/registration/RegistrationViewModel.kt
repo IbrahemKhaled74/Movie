@@ -3,84 +3,73 @@ package com.example.movie.registration
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.example.movie.FirebaseUtils
-import com.example.movie.FirebaseUtils.firebaseAuth
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
-import kotlinx.coroutines.launch
+import com.example.movie.utils.FirebaseUtils.firebaseAuth
 
-class RegistrationViewModel:ViewModel() {
-    val userName=ObservableField<String>()
-    val userNameError=ObservableField<String>()
-    val email=ObservableField<String>()
-    val emailError=ObservableField<String>()
-    val password=ObservableField<String>()
-    val passwordError=ObservableField<String>()
-    val loading=MutableLiveData<Boolean>()
-    val message=MutableLiveData<String>()
-    var navigator:Navigator?=null
+class RegistrationViewModel : ViewModel() {
+    val userName = ObservableField<String>()
+    val userNameError = ObservableField<String>()
+    val email = ObservableField<String>()
+    val emailError = ObservableField<String>()
+    val password = ObservableField<String>()
+    val passwordError = ObservableField<String>()
+    var loading: Boolean = false
+    val message = MutableLiveData<String>()
+    var navigator: Navigator? = null
 
 
-    fun createAccount(){
-        if (isValid()){
-                createAccountInFB()
+    fun createAccount() {
+        if (isValid()) {
+            createAccountInFB()
         }
     }
 
     private fun createAccountInFB() {
-        loading.value=true
+        loading = true
         try {
-            loading.value=false
+            loading = false
             firebaseAuth.createUserWithEmailAndPassword(
-                    email.get() ?:"",
-                    password.get() ?:""
-                ).
-                addOnCompleteListener {
-                    task->
-                    if(task.isSuccessful){
-                        message.value="Successfully Sign In"
-                        navigator?.goToMainFragment()
-                    }else{
-                        message.value="Failed to Sign In"
-                    }
+                email.get() ?: "", password.get() ?: ""
+            ).addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    message.value = "Successfully Sign In"
+                    navigator?.goToEmailLogin()
+                } else {
+                    message.value = "Failed to Sign In"
                 }
+            }
 
 
-        }catch (ex:Exception){
-            loading.value=false
-            message.value=ex.localizedMessage
+        } catch (ex: Exception) {
+            loading = false
+            message.value = ex.localizedMessage
         }
 
     }
 
 
-    private fun isValid():Boolean{
-        var valid=true
-        if (userName.get().isNullOrBlank()){
+    private fun isValid(): Boolean {
+        var valid = true
+        if (userName.get().isNullOrBlank()) {
             userNameError.set("Enter Your valid name")
-            valid=false
-        }else{
+            valid = false
+        } else {
             userNameError.set(null)
         }
-        if (email.get().isNullOrBlank()){
+        if (email.get().isNullOrBlank()) {
             emailError.set("Enter Your valid Email")
-            valid=false
-        }else{
+            valid = false
+        } else {
             emailError.set(null)
         }
-        if (password.get().isNullOrBlank()){
+        if (password.get().isNullOrBlank()) {
             passwordError.set("Enter Your valid Password")
-            valid=false
-        }else{
+            valid = false
+        } else {
             passwordError.set(null)
         }
 
         return valid
     }
-
-
 
 
 }

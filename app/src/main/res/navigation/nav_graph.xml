@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splash"
-        android:name="com.example.movie.Splash"
+        android:name="com.example.movie.splash.Splash"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -43,6 +43,9 @@
             app:destination="@id/mainFragment"
             app:popUpTo="@id/login"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_emailLogin_to_resetPassword"
+            app:destination="@id/resetPassword" />
     </fragment>
     <fragment
         android:id="@+id/viewPager"
@@ -63,14 +66,22 @@
         tools:layout="@layout/fragment_regesteration"
         >
         <action
-            android:id="@+id/action_registration_to_mainFragment"
-            app:destination="@id/mainFragment"
-            app:popUpTo="@id/login"
-            app:popUpToInclusive="true" />
+            android:id="@+id/action_registration_to_emailLogin"
+            app:destination="@id/emailLogin" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.movie.MainFragment"
+        android:name="com.example.movie.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/resetPassword"
+        android:name="com.example.movie.reset_pass.ResetPassword"
+        android:label="ResetPassword"
+        tools:layout="@layout/fragment_reset_password"
+        >
+        <action
+            android:id="@+id/action_resetPassword_to_emailLogin"
+            app:destination="@id/emailLogin" />
+    </fragment>
 </navigation>
