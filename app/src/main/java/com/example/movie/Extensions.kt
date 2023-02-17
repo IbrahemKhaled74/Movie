@@ -1,12 +1,13 @@
 package com.example.movie
 
 import android.app.Activity
+import android.content.Context
 import android.widget.Toast
 
 object Extensions {
 
-    fun Activity.toast(msg: String){
-        Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
+    fun toastMessage(context:Context,msg: String){
+        Toast.makeText(context, msg, Toast.LENGTH_LONG).show()
     }
 
 

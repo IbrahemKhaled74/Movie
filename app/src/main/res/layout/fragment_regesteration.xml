@@ -183,7 +183,6 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/blue"
             app:cardCornerRadius="15dp"
-
             android:onClick="@{()->VM.createAccount()}"
             app:cardElevation="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -208,6 +207,15 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
 
         </androidx.cardview.widget.CardView>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:showLoading="@{VM.loading}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

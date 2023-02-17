@@ -20,6 +20,7 @@ class RegistrationViewModel:ViewModel() {
     val passwordError=ObservableField<String>()
     val loading=MutableLiveData<Boolean>()
     val message=MutableLiveData<String>()
+    var navigator:Navigator?=null
 
 
     fun createAccount(){
@@ -40,6 +41,7 @@ class RegistrationViewModel:ViewModel() {
                     task->
                     if(task.isSuccessful){
                         message.value="Successfully Sign In"
+                        navigator?.goToMainFragment()
                     }else{
                         message.value="Failed to Sign In"
                     }
